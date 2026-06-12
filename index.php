@@ -44,16 +44,13 @@
 </head>
 <body class="bg-slate-100 min-h-screen">
 
-  <!-- ===== TOP HEADER ===== -->
   <header class="fixed top-0 left-0 right-0 z-30 bg-navy-900 shadow-lg h-16 flex items-center px-6 gap-4">
-    <!-- Mobile hamburger -->
     <button id="hamburgerBtn" class="lg:hidden text-slate-300 hover:text-white mr-1">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
 
-    <!-- Logo + App Name -->
     <div class="flex items-center gap-3">
       <div class="bg-blue-500 rounded-lg p-1.5">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -68,7 +65,6 @@
     </div>
 
     <div class="ml-auto flex items-center gap-3">
-      <!-- Notification bell -->
       <button class="relative text-slate-400 hover:text-white transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -76,7 +72,6 @@
         </svg>
         <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">3</span>
       </button>
-      <!-- User avatar -->
       <div class="flex items-center gap-2 cursor-pointer group">
         <img src="https://ui-avatars.com/api/?name=Admin+CMS&background=3b82f6&color=fff&size=36"
              alt="Admin" class="w-8 h-8 rounded-full ring-2 ring-blue-500/40 group-hover:ring-blue-400 transition-all" />
@@ -85,10 +80,8 @@
     </div>
   </header>
 
-  <!-- ===== LAYOUT WRAPPER ===== -->
   <div class="flex pt-16 min-h-screen">
 
-    <!-- ===== SIDEBAR ===== -->
     <aside id="sidebar"
       class="fixed left-0 top-16 bottom-0 z-20 w-64 bg-navy-800 flex flex-col
              -translate-x-full lg:translate-x-0">
@@ -97,7 +90,6 @@
         <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3 px-3">Menu Utama</p>
         <nav class="space-y-1">
 
-          <!-- Kelola Penulis -->
           <button onclick="setActive(this, 'penulis')"
             class="nav-item active w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,7 +99,6 @@
             Kelola Penulis
           </button>
 
-          <!-- Kelola Artikel -->
           <button onclick="setActive(this, 'artikel')"
             class="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 text-slate-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,7 +108,6 @@
             Kelola Artikel
           </button>
 
-          <!-- Kelola Kategori -->
           <button onclick="setActive(this, 'kategori')"
             class="nav-item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 text-slate-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,7 +120,6 @@
         </nav>
       </div>
 
-      <!-- Sidebar footer -->
       <div class="mt-auto px-4 py-4 border-t border-slate-700/50">
         <button class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:text-red-400 hover:bg-red-500/10 transition-all duration-150">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -142,19 +131,15 @@
       </div>
     </aside>
 
-    <!-- Sidebar overlay (mobile) -->
     <div id="sidebarOverlay"
       class="fixed inset-0 z-10 bg-black/50 hidden lg:hidden"
       onclick="closeSidebar()">
     </div>
 
-    <!-- ===== MAIN CONTENT ===== -->
     <main class="flex-1 lg:ml-64 p-6">
 
-      <!-- ===== CONTENT AREA ===== -->
       <div id="contentArea">
 
-        <!-- Page title row -->
         <div class="flex items-center justify-between mb-6">
           <div>
             <h2 id="pageTitle" class="text-xl font-bold text-navy-900">Kelola Penulis</h2>
@@ -171,7 +156,6 @@
           </button>
         </div>
 
-        <!-- Stats cards (optional, adds polish) -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 px-5 py-4 flex items-center gap-4">
             <div class="bg-blue-50 rounded-lg p-2.5">
@@ -211,10 +195,8 @@
           </div>
         </div>
 
-        <!-- Table card -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden">
 
-          <!-- Card header with search -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 border-b border-slate-100">
             <h3 class="font-semibold text-navy-800 text-sm">Daftar Penulis</h3>
             <div class="relative">
@@ -228,7 +210,6 @@
             </div>
           </div>
 
-          <!-- Table scroll wrapper -->
           <div class="overflow-x-auto">
             <table class="w-full text-sm">
               <thead>
@@ -240,180 +221,20 @@
                   <th class="text-center text-xs font-semibold text-slate-500 uppercase tracking-wider px-4 py-3">Aksi</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-slate-100">
-
-                <!-- Row 1 -->
-                <tr class="hover:bg-slate-50/70 transition-colors">
-                  <td class="px-6 py-3.5">
-                    <img src="https://ui-avatars.com/api/?name=Andi+Saputra&background=3b82f6&color=fff&size=36"
-                         alt="Foto" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-200" />
-                  </td>
-                  <td class="px-4 py-3.5 font-medium text-navy-800">Andi Saputra</td>
-                  <td class="px-4 py-3.5 text-slate-600">@andisaputra</td>
-                  <td class="px-4 py-3.5">
-                    <span class="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono bg-slate-100 px-2.5 py-1 rounded">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                      </svg>
-                      ••••••••
-                    </span>
-                  </td>
-                  <td class="px-4 py-3.5 text-center">
-                    <div class="flex items-center justify-center gap-2">
-                      <button onclick="openModal('edit')"
-                        class="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm hover:shadow-blue-200 hover:shadow">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                        Edit
-                      </button>
-                      <button onclick="confirmDelete('Andi Saputra')"
-                        class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm hover:shadow-red-200 hover:shadow">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                        </svg>
-                        Hapus
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-
-                <!-- Row 2 -->
-                <tr class="hover:bg-slate-50/70 transition-colors">
-                  <td class="px-6 py-3.5">
-                    <img src="https://ui-avatars.com/api/?name=Rina+Fitriani&background=8b5cf6&color=fff&size=36"
-                         alt="Foto" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-200" />
-                  </td>
-                  <td class="px-4 py-3.5 font-medium text-navy-800">Rina Fitriani</td>
-                  <td class="px-4 py-3.5 text-slate-600">@rinafit</td>
-                  <td class="px-4 py-3.5">
-                    <span class="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono bg-slate-100 px-2.5 py-1 rounded">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                      </svg>
-                      ••••••••
-                    </span>
-                  </td>
-                  <td class="px-4 py-3.5 text-center">
-                    <div class="flex items-center justify-center gap-2">
-                      <button onclick="openModal('edit')"
-                        class="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                        Edit
-                      </button>
-                      <button onclick="confirmDelete('Rina Fitriani')"
-                        class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                        </svg>
-                        Hapus
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-
-                <!-- Row 3 -->
-                <tr class="hover:bg-slate-50/70 transition-colors">
-                  <td class="px-6 py-3.5">
-                    <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=059669&color=fff&size=36"
-                         alt="Foto" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-200" />
-                  </td>
-                  <td class="px-4 py-3.5 font-medium text-navy-800">Budi Santoso</td>
-                  <td class="px-4 py-3.5 text-slate-600">@budisant</td>
-                  <td class="px-4 py-3.5">
-                    <span class="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono bg-slate-100 px-2.5 py-1 rounded">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                      </svg>
-                      ••••••••
-                    </span>
-                  </td>
-                  <td class="px-4 py-3.5 text-center">
-                    <div class="flex items-center justify-center gap-2">
-                      <button onclick="openModal('edit')"
-                        class="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                        Edit
-                      </button>
-                      <button onclick="confirmDelete('Budi Santoso')"
-                        class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                        </svg>
-                        Hapus
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-
-                <!-- Row 4 -->
-                <tr class="hover:bg-slate-50/70 transition-colors">
-                  <td class="px-6 py-3.5">
-                    <img src="https://ui-avatars.com/api/?name=Dewi+Lestari&background=f59e0b&color=fff&size=36"
-                         alt="Foto" class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-200" />
-                  </td>
-                  <td class="px-4 py-3.5 font-medium text-navy-800">Dewi Lestari</td>
-                  <td class="px-4 py-3.5 text-slate-600">@dewilestari</td>
-                  <td class="px-4 py-3.5">
-                    <span class="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono bg-slate-100 px-2.5 py-1 rounded">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                      </svg>
-                      ••••••••
-                    </span>
-                  </td>
-                  <td class="px-4 py-3.5 text-center">
-                    <div class="flex items-center justify-center gap-2">
-                      <button onclick="openModal('edit')"
-                        class="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                        Edit
-                      </button>
-                      <button onclick="confirmDelete('Dewi Lestari')"
-                        class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                        </svg>
-                        Hapus
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-
-              </tbody>
+              <tbody id="tbody-penulis" class="divide-y divide-slate-100">
+                </tbody>
             </table>
           </div>
 
-          <!-- Table footer / pagination -->
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-3.5 border-t border-slate-100 bg-slate-50/50">
-            <p class="text-xs text-slate-500">Menampilkan <span class="font-semibold text-slate-700">4</span> dari <span class="font-semibold text-slate-700">4</span> data</p>
-            <div class="flex items-center gap-1">
-              <button disabled class="px-3 py-1.5 text-xs rounded border border-slate-200 text-slate-400 bg-white disabled:cursor-not-allowed">&#8592; Prev</button>
-              <button class="px-3 py-1.5 text-xs rounded border border-blue-500 bg-blue-500 text-white font-semibold">1</button>
-              <button disabled class="px-3 py-1.5 text-xs rounded border border-slate-200 text-slate-400 bg-white disabled:cursor-not-allowed">Next &#8594;</button>
-            </div>
+            <p class="text-xs text-slate-500">Menampilkan data penulis</p>
           </div>
 
-        </div><!-- /table card -->
-      </div><!-- /contentArea -->
-    </main>
-  </div><!-- /layout wrapper -->
-
-
-  <!-- ===== MODAL: TAMBAH / EDIT ===== -->
-  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-    <!-- Backdrop -->
+        </div></div></main>
+  </div><div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeModal()"></div>
 
-    <!-- Modal card -->
     <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-auto z-10 overflow-hidden">
-      <!-- Modal header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100">
         <h3 id="modalTitle" class="font-bold text-navy-900 text-base">Tambah Penulis</h3>
         <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 transition-colors">
@@ -423,48 +244,42 @@
         </button>
       </div>
 
-      <!-- Modal body -->
       <div class="px-6 py-5 space-y-4">
-        <!-- Foto upload -->
-        <div class="flex flex-col items-center gap-3 pb-4 border-b border-slate-100">
-          <div id="photoPreview"
-            class="w-20 h-20 rounded-full bg-slate-100 border-2 border-dashed border-slate-300
-                   flex items-center justify-center overflow-hidden cursor-pointer hover:border-blue-400 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-            </svg>
+        <input type="hidden" id="inputId" value="" />
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Depan</label>
+            <input type="text" id="inputNamaDepan" placeholder="Ahmad"
+              class="w-full px-3.5 py-2.5 text-sm border border-slate-200 rounded-lg
+                     focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-400
+                     placeholder-slate-400 transition" />
           </div>
-          <label class="text-xs font-medium text-blue-500 hover:text-blue-700 cursor-pointer transition-colors">
-            Unggah Foto
-            <input type="file" accept="image/*" class="hidden" onchange="previewPhoto(this)" />
-          </label>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Belakang</label>
+            <input type="text" id="inputNamaBelakang" placeholder="Fauzi"
+              class="w-full px-3.5 py-2.5 text-sm border border-slate-200 rounded-lg
+                     focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-400
+                     placeholder-slate-400 transition" />
+          </div>
         </div>
 
-        <!-- Nama -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Lengkap</label>
-          <input type="text" placeholder="Masukkan nama lengkap"
-            class="w-full px-3.5 py-2.5 text-sm border border-slate-200 rounded-lg
-                   focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-400
-                   placeholder-slate-400 transition" />
-        </div>
-
-        <!-- Username -->
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1.5">Username</label>
           <div class="relative">
             <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm">@</span>
-            <input type="text" placeholder="username"
+            <input type="text" id="inputUsername" placeholder="ahmad_f"
               class="w-full pl-8 pr-3.5 py-2.5 text-sm border border-slate-200 rounded-lg
                      focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-400
                      placeholder-slate-400 transition" />
           </div>
         </div>
 
-        <!-- Password -->
         <div>
-          <label class="block text-xs font-semibold text-slate-700 mb-1.5">Password</label>
+          <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+            Password
+            <span id="labelPasswordHint" class="font-normal text-slate-400 ml-1">(kosongkan jika tidak diganti)</span>
+          </label>
           <div class="relative">
             <input id="passwordInput" type="password" placeholder="Masukkan password"
               class="w-full px-3.5 pr-10 py-2.5 text-sm border border-slate-200 rounded-lg
@@ -481,24 +296,44 @@
             </button>
           </div>
         </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1.5">
+            Foto Profil
+            <span id="labelFotoHint" class="font-normal text-slate-400 ml-1">(kosongkan jika tidak diganti)</span>
+          </label>
+          <div class="flex items-center gap-4">
+            <div id="photoPreview"
+              class="w-14 h-14 rounded-full bg-slate-100 border border-slate-300 flex-shrink-0
+                     flex items-center justify-center overflow-hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+            </div>
+            <input type="file" id="inputFoto" accept="image/*" onchange="previewPhoto(this)"
+              class="w-full text-sm text-slate-500
+                     file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0
+                     file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-600
+                     hover:file:bg-blue-100 transition cursor-pointer" />
+          </div>
+        </div>
       </div>
 
-      <!-- Modal footer -->
       <div class="flex items-center justify-end gap-3 px-6 py-4 bg-slate-50 border-t border-slate-100">
         <button onclick="closeModal()"
           class="px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-all">
           Batal
         </button>
-        <button
-          class="px-5 py-2 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-600 rounded-lg shadow-sm transition-all hover:shadow-blue-200 hover:shadow">
-          Simpan
+        <button id="btnSimpan" onclick="simpanPenulis()"
+          class="px-5 py-2 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-600 rounded-lg shadow-sm transition-all">
+          Simpan Data
         </button>
       </div>
     </div>
   </div>
 
 
-  <!-- ===== MODAL: KONFIRMASI HAPUS ===== -->
   <div id="deleteModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
     <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="closeDeleteModal()"></div>
     <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-auto z-10 p-6 text-center">
@@ -515,7 +350,7 @@
           class="flex-1 px-4 py-2.5 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
           Batal
         </button>
-        <button
+        <button id="btnHapus" onclick="hapusPenulis()"
           class="flex-1 px-4 py-2.5 text-sm font-semibold text-white bg-red-500 hover:bg-red-600 rounded-xl shadow-sm transition-all">
           Ya, Hapus
         </button>
@@ -524,9 +359,10 @@
   </div>
 
 
-  <!-- ===== JAVASCRIPT ===== -->
   <script>
-    // ----- Sidebar toggle (mobile) -----
+    // ============================================================
+    // SIDEBAR
+    // ============================================================
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('sidebarOverlay');
 
@@ -540,11 +376,13 @@
       overlay.classList.add('hidden');
     }
 
-    // ----- Nav active state -----
+    // ============================================================
+    // NAV ACTIVE STATE
+    // ============================================================
     const pageTitles = {
-      penulis:  { title: 'Kelola Penulis',           subtitle: 'Manajemen data penulis blog' },
-      artikel:  { title: 'Kelola Artikel',            subtitle: 'Manajemen konten artikel blog' },
-      kategori: { title: 'Kelola Kategori Artikel',   subtitle: 'Manajemen kategori untuk artikel' },
+      penulis:  { title: 'Kelola Penulis',         subtitle: 'Manajemen data penulis blog' },
+      artikel:  { title: 'Kelola Artikel',          subtitle: 'Manajemen konten artikel blog' },
+      kategori: { title: 'Kelola Kategori Artikel', subtitle: 'Manajemen kategori untuk artikel' },
     };
 
     function setActive(btn, key) {
@@ -556,17 +394,46 @@
       });
       btn.classList.add('active');
       btn.classList.remove('text-slate-300');
-      // Update page title
       document.getElementById('pageTitle').textContent    = pageTitles[key].title;
       document.getElementById('pageSubtitle').textContent = pageTitles[key].subtitle;
-      // Close sidebar on mobile
       closeSidebar();
     }
 
-    // ----- Modal helpers -----
-    function openModal(mode) {
-      document.getElementById('modalTitle').textContent =
-        mode === 'tambah' ? 'Tambah Penulis' : 'Edit Penulis';
+    // ============================================================
+    // MODAL TAMBAH / EDIT
+    // ============================================================
+    let modalMode = 'tambah'; // 'tambah' atau 'edit'
+
+    function openModal(mode, id = null) {
+      modalMode = mode;
+      
+      // Reset semua field
+      document.getElementById('inputId').value           = '';
+      document.getElementById('inputNamaDepan').value    = '';
+      document.getElementById('inputNamaBelakang').value = '';
+      document.getElementById('inputUsername').value     = '';
+      document.getElementById('passwordInput').value     = '';
+      document.getElementById('inputFoto').value         = '';
+      document.getElementById('photoPreview').innerHTML  = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+        </svg>`;
+
+      if (mode === 'tambah') {
+        document.getElementById('modalTitle').textContent       = 'Tambah Penulis';
+        document.getElementById('btnSimpan').textContent        = 'Simpan Data';
+        document.getElementById('labelPasswordHint').style.display = 'none';
+        document.getElementById('labelFotoHint').style.display  = 'none';
+      } else {
+        document.getElementById('modalTitle').textContent       = 'Edit Penulis';
+        document.getElementById('btnSimpan').textContent        = 'Simpan Perubahan';
+        document.getElementById('labelPasswordHint').style.display = '';
+        document.getElementById('labelFotoHint').style.display  = '';
+        
+        // Ambil data satu penulis untuk isi form
+        loadSatuPenulis(id);
+      }
+
       const m = document.getElementById('modal');
       m.classList.remove('hidden');
       m.classList.add('flex');
@@ -578,26 +445,34 @@
       m.classList.remove('flex');
     }
 
-    function confirmDelete(name) {
-      document.getElementById('deleteTargetName').textContent = name;
+    // ============================================================
+    // MODAL HAPUS
+    // ============================================================
+    let idHapusTarget = null;
+
+    function confirmDelete(id, nama) {
+      idHapusTarget = id;
+      document.getElementById('deleteTargetName').textContent = nama;
       const m = document.getElementById('deleteModal');
       m.classList.remove('hidden');
       m.classList.add('flex');
     }
 
     function closeDeleteModal() {
+      idHapusTarget = null;
       const m = document.getElementById('deleteModal');
       m.classList.add('hidden');
       m.classList.remove('flex');
     }
 
-    // ----- Password toggle -----
+    // ============================================================
+    // PASSWORD & PHOTO PREVIEW TOGGLE
+    // ============================================================
     function togglePassword() {
       const inp = document.getElementById('passwordInput');
       inp.type = inp.type === 'password' ? 'text' : 'password';
     }
 
-    // ----- Photo preview -----
     function previewPhoto(input) {
       if (input.files && input.files[0]) {
         const reader = new FileReader();
@@ -608,6 +483,195 @@
         reader.readAsDataURL(input.files[0]);
       }
     }
+
+    // ============================================================
+    // FETCH: LOAD SEMUA PENULIS
+    // ============================================================
+    function loadPenulis() {
+      const tbody = document.getElementById('tbody-penulis');
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="5" class="px-6 py-10 text-center text-slate-400 text-sm">
+            Memuat data...
+          </td>
+        </tr>`;
+
+      fetch('ambil_penulis.php')
+        .then(r => r.json())
+        .then(res => {
+          if (res.status !== 'sukses' || res.jumlah === 0) {
+            tbody.innerHTML = `
+              <tr>
+                <td colspan="5" class="px-6 py-10 text-center text-slate-400 text-sm">
+                  Belum ada data penulis. Klik "+ Tambah Data" untuk menambahkan.
+                </td>
+              </tr>`;
+            return;
+          }
+
+          let html = '';
+          res.data.forEach(p => {
+            const foto = (p.foto && p.foto.trim() !== '') 
+              ? `uploads_penulis/${p.foto}` 
+              : `uploads_penulis/default.png`;
+            const fallback = `uploads_penulis/default.png`;
+
+            html += `
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="px-6 py-3.5">
+                  <img src="${foto}" alt="Foto"
+                    class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-200"
+                    onerror="this.src='${fallback}'" />
+                </td>
+                <td class="px-4 py-3.5 font-medium text-navy-800">${p.nama_depan} ${p.nama_belakang}</td>
+                <td class="px-4 py-3.5 text-slate-600">@${p.user_name}</td>
+                <td class="px-4 py-3.5">
+                  <span class="inline-flex items-center gap-1.5 text-slate-400 text-xs font-mono bg-slate-100 px-2.5 py-1 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                    ••••••••
+                  </span>
+                </td>
+                <td class="px-4 py-3.5 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <button onclick="openModal('edit', ${p.id})"
+                      class="flex items-center gap-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                      </svg>
+                      Edit
+                    </button>
+                    <button onclick="confirmDelete(${p.id}, '${p.nama_depan} ${p.nama_belakang}')"
+                      class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                      </svg>
+                      Hapus
+                    </button>
+                  </div>
+                </td>
+              </tr>`;
+          });
+          tbody.innerHTML = html;
+        })
+        .catch(err => {
+          tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-red-400 text-sm">Gagal memuat data: ${err.message}</td></tr>`;
+        });
+    }
+
+    // ============================================================
+    // FETCH: AMBIL SATU PENULIS → ISI FORM EDIT
+    // ============================================================
+    function loadSatuPenulis(id) {
+      fetch(`ambil_satu_penulis.php?id=${id}`)
+        .then(r => r.json())
+        .then(res => {
+          if (res.status !== 'sukses') return;
+          const p = res.data;
+          document.getElementById('inputId').value           = p.id;
+          document.getElementById('inputNamaDepan').value    = p.nama_depan;
+          document.getElementById('inputNamaBelakang').value = p.nama_belakang;
+          document.getElementById('inputUsername').value     = p.user_name;
+        });
+    }
+
+    // ============================================================
+    // FETCH: SIMPAN (INSERT atau UPDATE)
+    // ============================================================
+    function simpanPenulis() {
+      const namaDepan    = document.getElementById('inputNamaDepan').value.trim();
+      const namaBelakang = document.getElementById('inputNamaBelakang').value.trim();
+      const username     = document.getElementById('inputUsername').value.trim();
+      const password     = document.getElementById('passwordInput').value;
+      const foto         = document.getElementById('inputFoto').files[0];
+
+      // Validasi field wajib
+      if (!namaDepan || !username) {
+        alert('Nama Depan dan Username wajib diisi!');
+        return;
+      }
+      if (modalMode === 'tambah' && !password) {
+        alert('Password wajib diisi untuk penulis baru!');
+        return;
+      }
+
+      // Gunakan FormData agar bisa kirim file foto
+      const formData = new FormData();
+      formData.append('nama_depan',    namaDepan);
+      formData.append('nama_belakang', namaBelakang);
+      formData.append('username',      username);
+      formData.append('password',      password);
+      if (foto) formData.append('foto', foto);
+
+      // Tentukan endpoint berdasarkan mode
+      let endpoint = 'simpan_penulis.php';
+      if (modalMode === 'edit') {
+        formData.append('id', document.getElementById('inputId').value);
+        endpoint = 'update_penulis.php';
+      }
+
+      // Ubah teks tombol jadi loading
+      const btn = document.getElementById('btnSimpan');
+      btn.textContent = 'Menyimpan...';
+      btn.disabled    = true;
+
+      fetch(endpoint, { method: 'POST', body: formData })
+        .then(r => r.json())
+        .then(res => {
+          if (res.status === 'sukses') {
+            closeModal();
+            loadPenulis(); // Refresh tabel
+          } else {
+            alert('Gagal: ' + res.pesan);
+          }
+        })
+        .catch(err => alert('Error: ' + err.message))
+        .finally(() => {
+          btn.textContent = modalMode === 'tambah' ? 'Simpan Data' : 'Simpan Perubahan';
+          btn.disabled    = false;
+        });
+    }
+
+    // ============================================================
+    // FETCH: HAPUS PENULIS
+    // ============================================================
+    function hapusPenulis() {
+      if (!idHapusTarget) return;
+
+      const btn = document.getElementById('btnHapus');
+      btn.textContent = 'Menghapus...';
+      btn.disabled    = true;
+
+      const formData = new FormData();
+      formData.append('id', idHapusTarget);
+
+      fetch('hapus_penulis.php', { method: 'POST', body: formData })
+        .then(r => r.json())
+        .then(res => {
+          if (res.status === 'sukses') {
+            closeDeleteModal();
+            loadPenulis(); // Refresh tabel
+          } else {
+            alert('Gagal menghapus: ' + res.pesan);
+          }
+        })
+        .catch(err => alert('Error: ' + err.message))
+        .finally(() => {
+          btn.textContent = 'Ya, Hapus';
+          btn.disabled    = false;
+        });
+    }
+
+    // ============================================================
+    // INIT — Panggil saat DOM siap
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadPenulis();
+    });
   </script>
 
 </body>
