@@ -1,0 +1,9 @@
+# Blokir eksekusi semua file PHP/script di folder ini
+# Mencegah serangan file upload (attacker upload PHP lalu eksekusi)
+
+Options -ExecCGI
+AddHandler cgi-script .php .php3 .php4 .php5 .phtml .pl .py .jsp .asp .sh .cgi
+Deny from all
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+    Allow from all
+</FilesMatch>

@@ -1,0 +1,48 @@
+<?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+
+$host     = 'localhost';
+$db_name  = 'db_blog';
+$username = 'root';
+$password = '';
+
+$conn = mysqli_connect($host, $username, $password, $db_name);
+
+if (!$conn) {
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Koneksi database gagal: ' . mysqli_connect_error()
+    ]);
+    exit;
+}
+
+mysqli_set_charset($conn, 'utf8mb4');
+
+$sql    = "SELECT id, nama_depan, nama_belakang, user_name, password, foto FROM penulis ORDER BY id DESC";
+$result = mysqli_query($conn, $sql);
+
+if (!$result) {
+    echo json_encode([
+        'status'  => 'error',
+        'message' => 'Query gagal: ' . mysqli_error($conn)
+    ]);
+    mysqli_close($conn);
+    exit;
+}
+
+$data = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $row['nama_lengkap'] = trim($row['nama_depan'] . ' ' . $row['nama_belakang']);
+    $data[] = $row;
+}
+
+echo json_encode([
+    'status' => 'sukses',
+    'data'   => $data
+]);
+
+mysqli_free_result($result);
+mysqli_close($conn);
+?>
